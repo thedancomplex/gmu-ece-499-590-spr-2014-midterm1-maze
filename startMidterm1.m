@@ -1,6 +1,16 @@
+function [ success ] = startMidterm1(q)
 addpath("/usr/share/openrave-0.8/octave/") 
 
-orEnvLoadScene('/home/student/projects/gmu-ece-499-590-spr-2014-midterm1-maze/mazeMidterm1.env.xml', 1);
+% Midterm
+if (q == 1)
+orEnvLoadScene('/home/student/projects/gmu-ece-499-590-spr-2014-midterm1-maze/mazeMidterm1m1.env.xml', 1);
+elseif (q == 2)
+orEnvLoadScene('/home/student/projects/gmu-ece-499-590-spr-2014-midterm1-maze/mazeMidterm1m2.env.xml', 1);
+elseif (q == 3)
+orEnvLoadScene('/home/student/projects/gmu-ece-499-590-spr-2014-midterm1-maze/mazeMidterm1m3.env.xml', 1);
+else
+  disp('invalid choice')
+end
 
 % pay attention to this line, I found different commands to switch on
 % the physics engine but just 'physics ode' works fine
@@ -30,8 +40,18 @@ success = orRobotControllerSet(robotid, 'odevelocity')
 success = orRobotControllerSend(robotid, 'setvelocity 0 0')
 
 % Midterm
-midterm1(robotid);
+if (q == 1)
+  midterm1m1(robotid);
+elseif (q == 2)
+  midterm1m2(robotid);
+elseif (q == 3)
+  midterm1m3(robotid);
+else
+  disp('invalid choice')
+end
 
 % Turn robot off`
 success = orRobotControllerSend(robotid,...
                                'setvelocity 0 0');
+
+end

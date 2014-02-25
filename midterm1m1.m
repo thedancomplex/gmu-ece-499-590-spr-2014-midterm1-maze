@@ -1,4 +1,4 @@
-function [] = midterm1(robotid)
+function [] = midterm1m1(robotid)
 
   wl = 0;
   wr = 0;
