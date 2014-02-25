@@ -10,7 +10,6 @@ function [] = midterm1m1(robotid)
     range = getrange(robotid);
     [x,y] = getxy(robotid)
 
-
   end
 
 end

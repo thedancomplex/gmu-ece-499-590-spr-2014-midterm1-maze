@@ -10,9 +10,5 @@ function [range] = getrange(robotid)
      % filtering "0" values (No idea were they come from)
      range(range==0)=NaN;
      
-     k = 0.1;
-     for i=1:length(range)
-	range(i) = range(i)*k*rand(1);
-     end
 
 end
